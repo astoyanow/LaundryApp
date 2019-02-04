@@ -33,14 +33,16 @@ public class MainActivity extends AppCompatActivity {
         washerStart.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                Intent goToWasherCountdown = new Intent(MainActivity.this, CountdownActivityWasher.class);
+                startActivity(goToWasherCountdown);
             }
         });
 
         dryerStart.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                Intent goToDryerCountdown = new Intent(MainActivity.this, CountdownActivityDryer.class);
+                startActivity(goToDryerCountdown);
             }
         });
     }
