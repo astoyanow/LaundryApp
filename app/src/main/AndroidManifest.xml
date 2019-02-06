@@ -10,7 +10,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".CountdownActivityDryer"></activity>
-        <activity android:name=".CountdownActivity" />
+        <activity android:name=".CountdownActivityWasher" />
         <activity android:name=".WasherAndDryerSettings" />
         <activity android:name=".AlarmSettingsActivity" />
         <activity android:name=".OptionsMenuActivity" />

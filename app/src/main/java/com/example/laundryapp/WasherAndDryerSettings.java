@@ -22,8 +22,6 @@ public class WasherAndDryerSettings extends AppCompatActivity {
     private EditText dryTime;
     String washerTimer = "WashSavedTime";
     String dryerTimer = "DrySavedTime";
-    String fileContentsWash = washTime.getText().toString();
-    String fileContentsDry = dryTime.getText().toString();
     FileOutputStream outputStreamWash;
     FileOutputStream outputStreamDry;
 
@@ -36,9 +34,12 @@ public class WasherAndDryerSettings extends AppCompatActivity {
         washTime = findViewById(R.id.WasherTimeInput);
         dryTime = findViewById(R.id.DryerTimeInput);
 
-        done.setOnClickListener(new View.OnClickListener() {
+       done.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                String fileContentsWash = washTime.getText().toString();
+                String fileContentsDry = dryTime.getText().toString();
+
                 try{
                     outputStreamWash = openFileOutput(washerTimer, Context.MODE_PRIVATE);
                     outputStreamWash.write(fileContentsWash.getBytes());
@@ -61,4 +62,5 @@ public class WasherAndDryerSettings extends AppCompatActivity {
         });
 
     }
+
 }
