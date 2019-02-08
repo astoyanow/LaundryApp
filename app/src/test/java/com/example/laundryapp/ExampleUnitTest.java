@@ -14,4 +14,10 @@ public class ExampleUnitTest {
     public void addition_isCorrect() {
         assertEquals(4, 2 + 2);
     }
+
+    @Test
+    public void changeToMillis_isCorrect(){ assertEquals(420000, 420000);}
+
+    @Test
+    public void getInputtedTime_isCorrect(){assertEquals(1620000, 1620000);}
 }

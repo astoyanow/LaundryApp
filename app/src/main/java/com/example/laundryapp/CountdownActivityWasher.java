@@ -23,7 +23,7 @@ public class CountdownActivityWasher extends AppCompatActivity {
         startStop.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                stopwatch.pauseResume(countdownTime);
+                stopwatch.pauseResume(countdownTime, startStop);
             }
         });
 

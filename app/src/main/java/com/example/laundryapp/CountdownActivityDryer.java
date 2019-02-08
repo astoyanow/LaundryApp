@@ -23,7 +23,7 @@ public class CountdownActivityDryer extends AppCompatActivity {
         startStop.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                dryerStopwatch.pauseResume(countdownTime);
+                dryerStopwatch.pauseResume(countdownTime, startStop);
             }
         });
 

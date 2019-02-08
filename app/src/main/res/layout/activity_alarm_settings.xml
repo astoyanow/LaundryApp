@@ -31,15 +31,15 @@
         android:layout_height="65dp"
         android:layout_marginStart="8dp"
         android:layout_marginEnd="8dp"
-        android:layout_marginBottom="264dp"
+        android:layout_marginBottom="272dp"
+        android:background="@color/colorPrimaryDark"
         android:backgroundTint="@color/colorPrimaryDark"
         android:backgroundTintMode="add"
-        android:text="Select Alarm"
         android:entries="@array/spinnerItems"
-        android:background="@color/colorPrimaryDark"
+        android:text="Select Alarm"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent" />
 
 

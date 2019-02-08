@@ -2,6 +2,8 @@ package com.example.laundryapp;
 
 import android.os.CountDownTimer;
 import android.widget.TextView;
+import android.widget.Button;
+
 
 public class CountdownTimer {
 
@@ -10,14 +12,18 @@ public class CountdownTimer {
     public boolean isRunning;
 
 
-    public void pauseResume(TextView displayedTimeLeft){
+    public void pauseResume(TextView displayedTimeLeft, Button startButton){
         if (isRunning == true){
             pause();
+            startButton.setText("Start");
         }
         else{
             countingDown(displayedTimeLeft);
+            startButton.setText("Pause");
         }
     }
+
+    //parse or get number from user input in WasherAndDryerSettings activity
 
     public void countingDown(final TextView displayedTimeLeft){
         isRunning = true;
@@ -38,7 +44,6 @@ public class CountdownTimer {
     public void pause(){
         isRunning = false;
         timer.cancel();
-
 
     }
     public String updateTimeLeft(){

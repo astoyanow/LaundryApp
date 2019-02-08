@@ -33,12 +33,26 @@ public class WasherAndDryerSettings extends AppCompatActivity {
         done = findViewById(R.id.doneButton);
         washTime = findViewById(R.id.WasherTimeInput);
         dryTime = findViewById(R.id.DryerTimeInput);
+        final String changedWashTime = washTime.getText().toString();
+        final String changedDryTime = dryTime.getText().toString();
 
        done.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 String fileContentsWash = washTime.getText().toString();
                 String fileContentsDry = dryTime.getText().toString();
+
+                try{
+                    int setTimeWasher = Integer.parseInt(changedWashTime);
+                    int setTimeDryer = Integer.parseInt(changedDryTime);
+                }
+                catch (NumberFormatException e){
+                    int setTimeWasher = 0;
+                    int setTimeDryer = 0;
+                }
+                washTime.setText(changedWashTime);
+                dryTime.setText(changedDryTime);
+
 
                 try{
                     outputStreamWash = openFileOutput(washerTimer, Context.MODE_PRIVATE);
@@ -56,6 +70,9 @@ public class WasherAndDryerSettings extends AppCompatActivity {
                 catch (Exception e){
                     e.printStackTrace();
                 }
+                Intent finish = new Intent (WasherAndDryerSettings.this, OptionsMenuActivity.class);
+                startActivity(finish);
+
 
 
             }
