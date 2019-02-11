@@ -8,13 +8,13 @@ public class ChangeTimes {
     //program parses input to retrieve time
     //program converts input into milliseconds
 
-    public int getInputtedTime(EditText userInput){
+    public static long getInputtedTime(EditText userInput){
         int time = Integer.parseInt(userInput.getText().toString());
         changeToMillis(time);
         return time;
     }
 
-    public long changeToMillis(int a){
+    public static long changeToMillis(int a){
         long convertedNumber = a * 60000;
         return convertedNumber;
     }

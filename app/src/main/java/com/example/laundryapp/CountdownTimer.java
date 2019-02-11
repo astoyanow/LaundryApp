@@ -8,7 +8,7 @@ import android.widget.Button;
 public class CountdownTimer {
 
     private CountDownTimer timer;
-    private long timeLeft = 1620000;
+    private long timeLeft = 1620000; //retrieve from save file or editText
     public boolean isRunning;
 
 
@@ -52,7 +52,7 @@ public class CountdownTimer {
         String remainingTime;
         remainingTime = minutes + ":";
         if (seconds < 10){
-           remainingTime += "0" + seconds;
+           remainingTime += "0";
        }
         remainingTime += seconds;
         return remainingTime;

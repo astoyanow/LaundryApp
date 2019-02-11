@@ -24,6 +24,7 @@ public class CountdownActivityDryer extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 dryerStopwatch.pauseResume(countdownTime, startStop);
+
             }
         });
 

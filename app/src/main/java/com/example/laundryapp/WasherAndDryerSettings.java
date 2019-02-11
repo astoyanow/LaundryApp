@@ -35,16 +35,18 @@ public class WasherAndDryerSettings extends AppCompatActivity {
         dryTime = findViewById(R.id.DryerTimeInput);
         final String changedWashTime = washTime.getText().toString();
         final String changedDryTime = dryTime.getText().toString();
+        final DataManagement manager = new DataManagement(getFilesDir());
 
        done.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 String fileContentsWash = washTime.getText().toString();
                 String fileContentsDry = dryTime.getText().toString();
+                ChangeTimes changeTimes = new ChangeTimes();
 
                 try{
-                    int setTimeWasher = Integer.parseInt(changedWashTime);
-                    int setTimeDryer = Integer.parseInt(changedDryTime);
+                    changeTimes.getInputtedTime(washTime);
+                    changeTimes.getInputtedTime(dryTime);
                 }
                 catch (NumberFormatException e){
                     int setTimeWasher = 0;
@@ -70,8 +72,7 @@ public class WasherAndDryerSettings extends AppCompatActivity {
                 catch (Exception e){
                     e.printStackTrace();
                 }
-                Intent finish = new Intent (WasherAndDryerSettings.this, OptionsMenuActivity.class);
-                startActivity(finish);
+                finish();
 
 
 
