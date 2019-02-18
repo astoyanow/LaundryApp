@@ -1,6 +1,5 @@
 package com.example.laundryapp;
 
-import android.widget.EditText;
 
 public class ChangeTimes {
 
@@ -8,14 +7,25 @@ public class ChangeTimes {
     //program parses input to retrieve time
     //program converts input into milliseconds
 
-    public static long getInputtedTime(EditText userInput){
-        int time = Integer.parseInt(userInput.getText().toString());
-        changeToMillis(time);
-        return time;
+    public static int getInputtedTime(String userInput){
+        String [] values = userInput.split(":");
+        int minutes = 0;
+        int seconds = 0;
+        if (values.length == 1){
+            minutes = Integer.valueOf(values[0]);
+            minutes = changeToMillis(minutes);
+        }
+        else{
+            minutes = Integer.valueOf(values[0]);
+            seconds = Integer.valueOf(values[1]);
+            minutes = changeToMillis(minutes);
+            seconds = seconds * 1000;
+        }
+        return minutes + seconds;
     }
 
-    public static long changeToMillis(int a){
-        long convertedNumber = a * 60000;
+    public static int changeToMillis(int a){
+        int convertedNumber = a * 60000;
         return convertedNumber;
     }
 }
