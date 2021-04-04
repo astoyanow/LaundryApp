@@ -7,6 +7,8 @@ public class ChangeTimes {
     //program parses input to retrieve time
     //program converts input into milliseconds
 
+
+
     public static int getInputtedTime(String userInput){
         String [] values = userInput.split(":");
         int minutes = 0;
